@@ -10,5 +10,11 @@
     <h1>WELCOME TO MY BLOG</h1>
 
     {% include "layout/menu.html"%}
+
+    <ul>
+        {% for blog in blogs %}
+        <li>{{ blog.judul }}</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>

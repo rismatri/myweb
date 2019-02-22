@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
 from django.shortcuts import render
+from.models import Artikel
 
 # Create your views here.
 def index(request):
@@ -11,4 +11,6 @@ def about(request):
 def contact(request):
     return render(request, 'layout/contact.html')
 def blog(request):
-    return render(request, 'layout/blog.html')
+    # select * from Artikel
+    blogs = Artikel.objects.all()
+    return render(request, 'layout/blog.html', {'blogs':blogs})
